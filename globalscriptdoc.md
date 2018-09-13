@@ -1,6 +1,6 @@
-#types:
+# types:
 
-##function (known to Java as a class and to plebs as a module or something):
+## function (known to Java as a class and to plebs as a module or something):
 ```
 Pirate(){
 	//any code that's not in a nested function is like a constructor in Java
@@ -20,9 +20,9 @@ Console.println(tSeries.pirateLevel())	//should print 69
 Yes. For real. None of that Java suffering. Functions and types are one thing. Obviously some functions won't do anything interesting when used as a type. If you want, you can follow Java convention and make your type names start with an uppercase letter and your function names start with a lowercase letter, but the compiler shouldn't care what you do, and should treat them as the same.
 
 
-##booleans:
+## booleans:
 	
-###true:
+### true:
 ```
 true
 !false
@@ -35,7 +35,7 @@ number <= number
 number <= number+1
 ```
 
-###false:
+### false:
 ```
 false
 !true
@@ -43,7 +43,7 @@ not true
 ```
 
 
-##number:
+## number:
 ```
 number = 9
 temp = 2.4
@@ -54,33 +54,36 @@ Whether a number is stored in the system as an integer or a floating-point numbe
 *for those writing compilers:* As a general rule, if the number is an integer mathematically, it should be stored as such.
 
 
-builtins:
-print to console:
+## builtins:
+### print to console:
 ```Console.print(string)```
 
-print to console and start new line and return carriage:
+### print to console and start new line and return carriage:
 ```Console.println(string)```
 
-clear console:
+### clear console:
 ```Console.clear()```
 
-if statement:
+### if statement:
 ```
 if(boolean){
 	//stuff
 }
 ```
-else statement (demo):
+
+### else statement (demo):
 ```if(boolean){
 	//stuff
 }
 else{
 	//stuff
 }```
-else if statement (demo):
+
+### else if statement (demo):
 ```if(boolean){
 	//stuff
 }
+
 elseif(boolean){	//alternatively use `elif` or `else if`
 	//stuff
 }```
