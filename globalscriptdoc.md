@@ -56,13 +56,19 @@ Whether a number is stored in the system as an integer or a floating-point numbe
 
 ## builtins:
 ### print to console:
-```Console.print(string)```
+```
+Console.print(string)
+```
 
 ### print to console and start new line and return carriage:
-```Console.println(string)```
+```
+Console.println(string)
+```
 
 ### clear console:
-```Console.clear()```
+```
+Console.clear()
+```
 
 ### if statement:
 ```
@@ -72,18 +78,22 @@ if(boolean){
 ```
 
 ### else statement (demo):
-```if(boolean){
+```
+if(boolean){
 	//stuff
 }
 else{
 	//stuff
-}```
+}
+```
 
 ### else if statement (demo):
-```if(boolean){
+```
+if(boolean){
 	//stuff
 }
 
 elseif(boolean){	//alternatively use `elif` or `else if`
 	//stuff
-}```
+}
+```
