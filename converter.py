@@ -1,2 +1,2 @@
 filename = "index.gs"
-file = open(filename, r)
+rawText = open(filename, r)
