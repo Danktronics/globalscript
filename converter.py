@@ -7,4 +7,6 @@ progress = (len(rawText)-len(cache))/len(rawText) #progress should always be thi
 print(str(progress*100) + "% complete.") #print every so often
 
 while(len(cache) > 0):
-	pass
+	if(cache[1:] = "\n"):
+		cache = cache[1:]
+		convertCache = convertCache + "\n"
