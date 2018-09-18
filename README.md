@@ -83,6 +83,7 @@ These libraries should work as specified in any compiler.
 The JSON builtin should help because JSON is:
 1. Widely used
 2. that's about it actually
+
 Assume the following for the entire JSON section:
 ```
 example = '{"a": "1", "b": "2", "c": "3"}'
