@@ -1,21 +1,32 @@
 # types:
 
-## function (known to Java as a class and to plebs as a module or something):
+## function (known to plebs as a module or something):
 ```
-Pirate(){
+pirateLevel = 0
+function pirate(num arg){			//putting number forces any inputted variable to be a number the same way setting a default argument does (like in the type definition below) but also requires a number to be inputted. This is optional
+	pirateLevel+=arg
+	return("Success!")
+}
+
+pirate(69)						//adds 69 to the instance variable, see the function
+Console.println(pirateLevel)	//should print 69
+```
+
+## custom types (classes):
+```
+class Pirate(boost=1){				//a class can take
 	//any code that's not in a nested function is like a constructor in Java
-	inst pirateLevel = 0 					//this is the syntax for making an instance variable. Instance variables can be accessed as an attribute of the function
-	intensify(arg){						//this is a nested function. usage below
-		pirateLevel+=arg
+	inst pirateLevel = 0 			//this is the syntax for making an instance variable. Instance variables can be accessed as an attribute of the class as well.
+	intensify(number arg){			
+		pirateLevel+=(boost*arg)
 	}
 }
 
-tSeries = Pirate()						//copies the function into a variable (in Java this would be creating a new object of class Pirate)
-tSeries.intensify(69)						//adds 69 to the instance variable, see the function
-Console.println(tSeries.pirateLevel)	//should print 69
+tSeries = Pirate(boost=2)
+tSeries.intensify(34.5)
+Console.println(tSeries.pirateLevel)		//should print 69
 ```
-Yes. For real. None of that Java suffering. Functions and types are one thing. Obviously some functions won't do anything interesting when used as a type. If you want, you can follow Java convention and make your type names start with an uppercase letter and your function names start with a lowercase letter, but the compiler shouldn't care what you do, and should treat them as the same.
-
+Custom types allow variables to store almost anything.
 
 ## booleans:
 	
