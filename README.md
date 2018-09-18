@@ -94,9 +94,7 @@ example = '{"a": "1", "b": "2", "c": "3"}'
 This will return the JSON names (if they exist) in one array, and the values in another. If the JSON string is an object, it will return a set of values.
 ```
 JSON.verticalArray(example)
-/*returns:
-[["a", "b", "c"], ["1", "2", "3"]]
-*/
+// returns [["a", "b", "c"], ["1", "2", "3"]]
 ```
 
 ### `JSON.horizontalArray()`:
@@ -104,9 +102,7 @@ JSON.verticalArray(example)
 This will return the JSON names and values in an array for each ordered pair. If the JSON string is an object, it will return a set of values.
 ```
 JSON.horizontalArray(example)
-/*returns:
-[["a", "1"], ["b", "2"], ["c", "3"]]
-*/
+//returns [["a", "1"], ["b", "2"], ["c", "3"]]
 ```
 
 ## builtins:
