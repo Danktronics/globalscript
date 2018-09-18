@@ -3,13 +3,14 @@ rawText = open(filename, "r").read()
 cache = str(rawText)
 convertCache = ""
 
-def parseBuiltinConsole(input):
-	if(input[8:].startswith("print(")):
-		return(input[8:])
+def parseBuiltinConsole(parse):
+	if(parse[8:].startswith("print(")):
+		return(parse[8:len(parse)-1] + ", end='', flush=True)")
+	elif(parse[8:].startswith("println(")):
+		return("print(" + parse[16:])
 
 while(len(cache) > 0):
-	print(str(((len(rawText)-len(cache))/len(rawText))*100) + "% complete.") #print every so often
-	while(cache[1:] == "\n"):
+	while(len(cache) > 0 and cache[0] == "\n"):
 		cache = cache[1:]
 		convertCache = convertCache + "\n"
 	
@@ -18,9 +19,15 @@ while(len(cache) > 0):
 		while(cache[cacheNum] != ")"):
 			if(cache[cacheNum] == "\n"):
 				break #custom exception about how the close paren is missing
-		
-			cacheNum = cacheNum + 1
-		
-		cache = cache + parseBuiltinConsole(cache[:cacheNum])
+			else: cacheNum = cacheNum + 1
+		cacheNum = cacheNum + 1
+		convertCache = convertCache + parseBuiltinConsole(cache[:cacheNum])
+		cache = cache[cacheNum:]
+	
+	print(str(((len(rawText)-len(cache))/len(rawText))*100) + "% complete.")
 
+print("done, saving...")
 open("index.py","w+").write(convertCache)
+print("saved to index.py")
+print("running globalscript code: \n")
+import index
