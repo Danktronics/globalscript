@@ -1,3 +1,5 @@
+globalscript is a programming language designed to be universal. C is to Python as Python is to globalscript. Hopefully. ;)
+
 # types:
 
 ## function (known to plebs as a module or something):
