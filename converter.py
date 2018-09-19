@@ -12,27 +12,32 @@ def parseBuiltinConsole(parse):
 
 #start parsing
 while(len(cache) > 0):
-	while(len(cache) > 0 and cache[0] == "\n"):			#goes through newlines
+	#goes through newlines. needs to be first
+	while(len(cache) > 0 and cache[0] == "\n"):
 		cache = cache[1:]
 		convertCache = convertCache + "\n"
 	
-	if(cache.startswith("Console.")):					#parses Console
+	#parses Console
+	if(cache.startswith("Console.")):
 		cacheNum = 0
 		while(len(cache)>0 and cache[cacheNum]!=")"):	#finds close parenthesis
-			if(cache[cacheNum] == "\n"):				#quits on newline
-				exit() #exception about how the close paren is missing
-			if(cache[cacheNum:cacheNum+1] == "//"):		#quits on comment
-				exit() #similar exception to above
+			if(cache[cacheNum] == "\n"):		#quits on newline
+				exit()
+				#exception about how the close paren is missing
+			if(cache[cacheNum:cacheNum+1] == "//"):	#quits on comment
+				exit()
+				#similar exception to above
 			cacheNum = cacheNum + 1
 		cacheNum = cacheNum + 1
 		convertCache = convertCache + parseBuiltinConsole(cache[:cacheNum])
 		cache = cache[cacheNum:]
 	
+	#parses comments
 	while(cache.startswith("//")):
 		cacheNum = 0
 		cache = cache[2:]
 		convertCache = convertCache + "#"
-		while(len(cache) > 0 and cache[cacheNum] != "\n"):
+		while(len(cache) > cacheNum and cache[cacheNum] != "\n"):
 			cacheNum = cacheNum + 1
 		convertCache = convertCache + cache[:cacheNum]
 		cache = cache[cacheNum:]
