@@ -1,4 +1,4 @@
-#contributing to globalscript
+# contributing to globalscript
 
 Aight girlies, boios, helicopters, and others. Welcome to the contributing tutorial. Here's what you need to do:
 
