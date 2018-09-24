@@ -81,17 +81,22 @@ These libraries should work as specified in any compiler.
 ## JSON:
 
 The JSON builtin should help because JSON is:
+
 1. Widely used
+
 2. that's about it actually
+
+The builtin library only supports name/value pairs.
 
 Assume the following for the entire JSON section:
 ```
 example = '{"a": "1", "b": "2", "c": "3"}'
 ```
 
+
 ### `JSON.verticalArray()`:
 *aliased as JSON.vArray(), they are one and the same*
-This will return the JSON names (if they exist) in one array, and the values in another. If the JSON string is an object, it will return a set of values.
+This will return the JSON names (if they exist) in one array, and the values in another.
 ```
 JSON.verticalArray(example)
 // returns [["a", "b", "c"], ["1", "2", "3"]]
@@ -99,7 +104,7 @@ JSON.verticalArray(example)
 
 ### `JSON.horizontalArray()`:
 *aliased as JSON.hArray(), they are one and the same*
-This will return the JSON names and values in an array for each ordered pair. If the JSON string is an object, it will return a set of values.
+This will return the JSON names and values in an array for each ordered pair.
 ```
 JSON.horizontalArray(example)
 //returns [["a", "1"], ["b", "2"], ["c", "3"]]

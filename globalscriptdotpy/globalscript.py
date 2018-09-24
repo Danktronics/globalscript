@@ -64,6 +64,11 @@ while(len(cache) > 0):
 	if(cache.startswith("Console.")):
 		cacheNum = 0
 		while(len(cache)>0 and cache[cacheNum]!=")"):	#finds close parenthesis
+			if(cache[cacheNum] = '"'):					#for multiline string
+				cacheNum = cacheNum + 1
+				while(cache[cacheNum] != '"'):
+					cacheNum = cacheNum + 1
+			
 			if(cache[cacheNum] == "\n"):		#quits on newline
 				exit()
 				#exception about how the close paren is missing
@@ -72,7 +77,10 @@ while(len(cache) > 0):
 				#similar exception to above
 			cacheNum = cacheNum + 1
 		cacheNum = cacheNum + 1
-		convertCache = convertCache + parseBuiltinConsole(cache[:cacheNum])
+		killTheNewlines = cache[:cacheNum]
+		while("\n" in killTheNewlines)					#also for multiline
+			killTheNewlines = killTheNewlines.replace("\n", "\\n")
+		convertCache = convertCache + parseBuiltinConsole(killTheNewlines)
 		cache = cache[cacheNum:]
 	
 	#parses comments
