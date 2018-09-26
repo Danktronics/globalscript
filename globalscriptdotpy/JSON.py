@@ -19,6 +19,6 @@ def horizontalArray(input):
 		while(!inputCache.startswith('"') and inputCache != ""):
 			inputCache = inputCache[1:]
 		inputCache = inputCache[1:]
-		findNext('"', inputCache)
+		temp1 = findNext('"', inputCache)
 		
 	
