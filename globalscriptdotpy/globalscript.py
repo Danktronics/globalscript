@@ -64,7 +64,7 @@ while(len(cache) > 0):
 	if(cache.startswith("Console.")):
 		cacheNum = 0
 		while(len(cache)>0 and cache[cacheNum]!=")"):	#finds close parenthesis
-			if(cache[cacheNum] = '"'):					#for multiline string
+			if(cache[cacheNum] == '"'):					#for multiline string
 				cacheNum = cacheNum + 1
 				while(cache[cacheNum] != '"'):
 					cacheNum = cacheNum + 1
@@ -78,7 +78,7 @@ while(len(cache) > 0):
 			cacheNum = cacheNum + 1
 		cacheNum = cacheNum + 1
 		killTheNewlines = cache[:cacheNum]
-		while("\n" in killTheNewlines)					#also for multiline
+		while("\n" in killTheNewlines):			#also for multiline
 			killTheNewlines = killTheNewlines.replace("\n", "\\n")
 		convertCache = convertCache + parseBuiltinConsole(killTheNewlines)
 		cache = cache[cacheNum:]
