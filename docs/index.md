@@ -94,20 +94,18 @@ example = '{"a": "1", "b": "2", "c": "3"}'
 ```
 
 
-### `JSON.verticalArray()`:
-*aliased as JSON.vArray(), they are one and the same*
-This will return the JSON names (if they exist) in one array, and the values in another.
+### `JSON.convertToJSON()`:
+This will convert arrays to JSON.
 ```
-JSON.verticalArray(example)
-// returns [["a", "b", "c"], ["1", "2", "3"]]
+example2 = JSON.convertToJSON(example)
+//returns [["a", "1"], ["b", "2"], ["c", "3"]]
 ```
 
-### `JSON.horizontalArray()`:
-*aliased as JSON.hArray(), they are one and the same*
-This will return the JSON names and values in an array for each ordered pair.
+### `JSON.convertFromJSON()`:
+This will convert JSON to arrays.
 ```
-JSON.horizontalArray(example)
-//returns [["a", "1"], ["b", "2"], ["c", "3"]]
+JSON.convertFromJSON(example2)
+//returns '{"a": "1", "b": "2", "c": "3"}'
 ```
 
 ## builtins:
