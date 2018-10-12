@@ -1,6 +1,10 @@
 import os
 import sys
 import math
+import json
+
+def convertToJSON(jsonInput):
+	return(json.loads(jsonInput).items())
 
 def parseBuiltinConsole(parse):
 	if(parse[8:].startswith("print(")):
